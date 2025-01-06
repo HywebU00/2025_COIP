@@ -1,0 +1,19 @@
+$mainColor: #411886;
+$secColor: #209eed;
+$noticeColor: #d30077;
+$textDarken: #222;
+$textLighten: #555;
+//#411886
+//#209eed
+// 資料庫
+@import './partials/shared';
+@import './style.scss';
+@import './index.scss';
+@import './lp.scss';
+@import './np.scss';
+@import './cp.scss';
+
+body {
+  font-family: $NotoSansTC;
+  color: $textDarken;
+}

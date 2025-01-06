@@ -1,0 +1,191 @@
+//-----------------動畫用-----------------//
+//animation: rightAnimationRotate180 1.8s 0s ease infinite;
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate360R {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes lineAnime {
+  0% {
+    transform: translate(0, -100%);
+    height: 100px;
+  }
+
+  50% {
+    transform: translate(0, 0);
+    height: 100px;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    height: 0;
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes scrollDown2 {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes downAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes rightAnimationRotate180 {
+  0% {
+    transform: translateX(0px) rotate(180deg);
+  }
+
+  50% {
+    transform: translateX(5px) rotate(180deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(180deg);
+  }
+}
+
+@keyframes rightAnimationScaleX {
+  0% {
+    transform: translateX(0px) scaleX(-1);
+  }
+
+  50% {
+    transform: translateX(5px) scaleX(-1);
+  }
+
+  100% {
+    transform: translateX(0px) scaleX(-1);
+  }
+}
+
+@keyframes rightAnimation {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes leftAnimation {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes leftAnimationScaleX {
+  0% {
+    transform: translateX(0px) scaleX(-1);
+  }
+
+  50% {
+    transform: translateX(-5px) scaleX(-1);
+  }
+
+  100% {
+    transform: translateX(0px) scaleX(-1);
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fbox {
+  to {
+    background-position: -100000000px 0;
+  }
+}
+@keyframes hasItem {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//-----------------動畫用-----------------//
