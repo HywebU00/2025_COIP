@@ -1244,10 +1244,10 @@ header .logo a.logo_S {
   }
 }
 .topSearch .searchInput {
-  width: 100%;
+  width: 400px;
   height: 0;
-  position: fixed;
-  right: 0;
+  position: absolute;
+  right: -10px;
   overflow: hidden;
   z-index: -1;
   background: rgba(0, 0, 0, 0.6);
@@ -1256,7 +1256,9 @@ header .logo a.logo_S {
 @media screen and (max-width: 1000px) {
   .topSearch .searchInput {
     position: fixed;
+    width: 100%;
     top: 60px;
+    right: 0;
   }
 }
 .topSearch .searchInput .content {
@@ -1270,6 +1272,12 @@ header .logo a.logo_S {
   background: none;
   border: none;
   color: #d0d0d0;
+}
+.topSearch .searchInput .content input::-moz-placeholder {
+  color: #fff;
+}
+.topSearch .searchInput .content input::placeholder {
+  color: #fff;
 }
 .topSearch .searchInput .close {
   background: none;
