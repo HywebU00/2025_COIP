@@ -1342,38 +1342,49 @@ header .logo a.logo_S {
     padding-top: 30px;
   }
 }
-.breadcrumb ul {
+.breadcrumb > .container {
+  position: relative;
+}
+.breadcrumb > .container ul {
+  position: absolute;
+  top: 0;
   display: flex;
   align-items: center;
   color: #303030;
   font-size: 1.125rem;
+  left: 40px;
 }
-.breadcrumb ul::before {
+@media screen and (max-width: 1000px) {
+  .breadcrumb > .container ul {
+    left: 20px;
+  }
+}
+.breadcrumb > .container ul::before {
   content: "";
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #553c96;
-  margin: 2px 15px 0 0;
+  margin: 2px 15px 0 6px;
   box-shadow: 0 0 0 3px #fff, 0 0 0 6px #000;
 }
 @media screen and (max-width: 767px) {
-  .breadcrumb ul {
+  .breadcrumb > .container ul {
     font-size: 1rem;
   }
 }
-.breadcrumb ul a {
+.breadcrumb > .container ul a {
   color: #000;
 }
-.breadcrumb ul li {
+.breadcrumb > .container ul li {
   display: flex;
   align-items: center;
 }
-.breadcrumb ul li + li::before {
+.breadcrumb > .container ul li + li::before {
   content: ">";
   margin: 0 5px;
 }
-.breadcrumb ul li:last-child {
+.breadcrumb > .container ul li:last-child {
   color: #d30077;
 }
 
@@ -1531,16 +1542,11 @@ header .logo a.logo_S {
   z-index: 2;
 }
 .innerPage .mainBox .functionPanel {
-  margin-top: -50px;
   margin-right: 0;
-}
-@media screen and (max-width: 1000px) {
-  .innerPage .mainBox .functionPanel {
-    margin-top: -43px;
-  }
 }
 .innerPage .mainBox .functionPanel .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
@@ -1614,8 +1620,8 @@ header .logo a.logo_S {
 }
 .innerPage .mainBox .functionPanel .share {
   box-sizing: border-box;
-  margin: 0.5em 0;
   position: relative;
+  width: 100%;
 }
 .innerPage .mainBox .functionPanel .share > a::before, .innerPage .mainBox .functionPanel .share > button::before {
   background-image: url("../images/icon/icon_share.png");
@@ -1624,15 +1630,8 @@ header .logo a.logo_S {
   background: #000;
 }
 .innerPage .mainBox .functionPanel .share ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 10px 7px;
-  background: #fff;
-  border-radius: 50px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 10px;
 }
 .innerPage .mainBox .functionPanel .share ul li {
   margin: 0px 0px 5px;
@@ -2449,7 +2448,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 .indexMain::before {
   content: "";
   inset: 0;
-  background: url("../images/indexbg.jpg") center top no-repeat;
+  background: url("../images/indexBg.jpg") center top no-repeat;
   display: block;
   position: absolute;
   z-index: -1;
