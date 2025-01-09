@@ -133,7 +133,17 @@ $(function () {
   $('.nextLv').hover(
     function () {
       if ($(window).outerWidth() > 1000) {
-        $(this).children('ul').stop().off().slideDown('fast');
+        let _this = $(this);
+        _this.children('ul').stop().off().slideDown('fast');
+
+        let thisPosition = _this.children('ul')[0].getBoundingClientRect();
+
+        if (thisPosition.x + thisPosition.width > window.innerWidth) {
+          _this.addClass('left');
+        } else {
+          _this.removeClass('left');
+        }
+
         $(this).addClass('active');
       }
     },

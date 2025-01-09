@@ -59,16 +59,17 @@
 
   &::after {
     content: '';
-    width: 20px;
-    height: 7px;
+    width: 14px;
+    aspect-ratio: 3/5;
     display: block;
-    background: url('../images/icon/icon_arrow.png') center right no-repeat;
+    background: url('../images/icon/icon_gotop.png') center right no-repeat;
+    background-size: contain;
     transition: all 0.3s linear;
     filter: invert(1);
     position: absolute;
-    left: 25%;
-    top: 45%;
-    transform: rotate(-90deg);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -408,6 +409,7 @@ header {
       }
 
       ul {
+        width: 100%;
         display: none;
         text-align: center;
 
@@ -465,10 +467,7 @@ header {
             &.active {
               & > a {
                 color: #fff;
-
-                @include screen('tablet') {
-                  background: $mainColor;
-                }
+                background: $mainColor;
 
                 &::before {
                   border-color: #fff;
@@ -479,6 +478,13 @@ header {
         }
 
         li {
+          &.left {
+            ul {
+              left: auto;
+              right: 100%;
+            }
+          }
+
           ul {
             left: 100%;
             transform: translateX(0);

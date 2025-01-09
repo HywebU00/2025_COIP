@@ -805,16 +805,17 @@ button:focus {
 }
 .goTop::after {
   content: "";
-  width: 20px;
-  height: 7px;
+  width: 14px;
+  aspect-ratio: 3/5;
   display: block;
-  background: url("../images/icon/icon_arrow.png") center right no-repeat;
+  background: url("../images/icon/icon_gotop.png") center right no-repeat;
+  background-size: contain;
   transition: all 0.3s linear;
   filter: invert(1);
   position: absolute;
-  left: 25%;
-  top: 45%;
-  transform: rotate(-90deg);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .slick-slide {
@@ -1033,6 +1034,7 @@ header .logo a.logo_S {
   border-color: #411886;
 }
 .mainMenu nav:not(.navigation) > ul ul {
+  width: 100%;
   display: none;
   text-align: center;
 }
@@ -1086,14 +1088,14 @@ header .logo a.logo_S {
 }
 .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a {
   color: #fff;
-}
-@media screen and (max-width: 1000px) {
-  .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a {
-    background: #411886;
-  }
+  background: #411886;
 }
 .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a::before {
   border-color: #fff;
+}
+.mainMenu nav:not(.navigation) > ul ul li.left ul {
+  left: auto;
+  right: 100%;
 }
 .mainMenu nav:not(.navigation) > ul ul li ul {
   left: 100%;
