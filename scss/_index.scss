@@ -622,17 +622,23 @@
           }
 
           .listBox {
-            display: flex;
+            // display: flex;
             margin: -20px -20px 20px;
 
             @include screen('tablet') {
               margin: -20px 0px 20px;
             }
+
+            .slick-track {
+              margin: 0;
+            }
           }
 
           .item {
-            padding: 20px 20px 0;
-
+            a {
+              display: block;
+              padding: 20px 20px 0;
+            }
 
             &:hover {
               .pic {

@@ -347,7 +347,7 @@ header {
       }
 
       & > li {
-        font-size: Rem(19);
+        font-size: Rem(16);
         position: relative;
 
         @include screenWidth('1200') {
@@ -826,6 +826,7 @@ header {
 .breadcrumb {
   position: relative;
   padding-top: 70px;
+  z-index: 2;
 
   @media screen and (max-width: 1300px) {
     padding-top: 40px;
@@ -995,6 +996,7 @@ header {
       left: 0;
       opacity: 0.7;
       transform: translate(0%, -30%);
+      pointer-events: none;
     }
 
 
@@ -1172,6 +1174,12 @@ header {
               width: 40px;
               height: 40px;
               display: block;
+              border-radius: 50%;
+
+              &:hover {
+                transform: translate(-2px, -2px);
+                box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
+              }
             }
 
             @include screen('tablet') {
@@ -1276,8 +1284,50 @@ footer {
       align-items: center;
     }
 
-    & > div {
-      padding-bottom: 1em;
+    .footer_info {
+      max-width: 500px;
+    }
+
+    .footerTextBlock {
+      margin-top: 10px;
+
+      &.noBreak {
+
+        p,
+        a {
+          white-space: nowrap;
+          flex-wrap: nowrap;
+        }
+      }
+
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          color: #42d9ff;
+        }
+      }
+
+      p,
+      a {
+        margin: 0;
+        word-break: break-all;
+        display: block;
+        color: #fff;
+
+        &:has(img) {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+
+        img {
+          width: auto !important;
+          height: auto !important;
+          float: left;
+        }
+      }
     }
   }
 

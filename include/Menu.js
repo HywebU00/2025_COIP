@@ -25,6 +25,7 @@ const MenuContent = `
                     </ul>
                   </li>
                   <li><a href="#">關於傳統命名</a></li>
+                  <li><a href="#">台灣原住民族傳統命名簡介</a></li>
                   <li><a href="#">各族常見傳統名</a></li>
                   <li><a href="#">行政法規</a></li>
                   <li><a href="#">實務問答</a></li>

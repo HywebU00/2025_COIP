@@ -978,7 +978,7 @@ header .logo a.logo_S {
   }
 }
 .mainMenu nav:not(.navigation) > ul > li {
-  font-size: 1.1875rem;
+  font-size: 1rem;
   position: relative;
 }
 @media screen and (max-width: 1200px) {
@@ -1333,6 +1333,7 @@ header .logo a.logo_S {
 .breadcrumb {
   position: relative;
   padding-top: 70px;
+  z-index: 2;
 }
 @media screen and (max-width: 1300px) {
   .breadcrumb {
@@ -1489,6 +1490,7 @@ header .logo a.logo_S {
   left: 0;
   opacity: 0.7;
   transform: translate(0%, -30%);
+  pointer-events: none;
 }
 .innerPage .mainBox .container {
   max-width: 1046px;
@@ -1642,6 +1644,11 @@ header .logo a.logo_S {
   width: 40px;
   height: 40px;
   display: block;
+  border-radius: 50%;
+}
+.innerPage .mainBox .functionPanel .share ul li a:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
 }
 @media screen and (max-width: 1000px) {
   .innerPage .mainBox .functionPanel .share ul li {
@@ -1727,8 +1734,42 @@ footer .container {
     align-items: center;
   }
 }
-footer .container > div {
-  padding-bottom: 1em;
+footer .container .footer_info {
+  max-width: 500px;
+}
+footer .container .footerTextBlock {
+  margin-top: 10px;
+}
+footer .container .footerTextBlock.noBreak p,
+footer .container .footerTextBlock.noBreak a {
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+footer .container .footerTextBlock a {
+  text-decoration: underline;
+}
+footer .container .footerTextBlock a:hover {
+  color: #42d9ff;
+}
+footer .container .footerTextBlock p,
+footer .container .footerTextBlock a {
+  margin: 0;
+  word-break: break-all;
+  display: block;
+  color: #fff;
+}
+footer .container .footerTextBlock p:has(img),
+footer .container .footerTextBlock a:has(img) {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer .container .footerTextBlock p img,
+footer .container .footerTextBlock a img {
+  width: auto !important;
+  height: auto !important;
+  float: left;
 }
 footer p {
   line-height: 1.45em;
@@ -2915,7 +2956,6 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   }
 }
 .indexMain .faqBox .content .moreItem .listBox {
-  display: flex;
   margin: -20px -20px 20px;
 }
 @media screen and (max-width: 1000px) {
@@ -2923,7 +2963,11 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
     margin: -20px 0px 20px;
   }
 }
-.indexMain .faqBox .content .moreItem .item {
+.indexMain .faqBox .content .moreItem .listBox .slick-track {
+  margin: 0;
+}
+.indexMain .faqBox .content .moreItem .item a {
+  display: block;
   padding: 20px 20px 0;
 }
 .indexMain .faqBox .content .moreItem .item:hover .pic img {
@@ -3376,7 +3420,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 }
 .cp h2 {
   font-size: 1.75em;
-  margin-bottom: 1.25em;
+  margin-bottom: 0.5em;
 }
 .cp h3 {
   font-size: 1.5em;
@@ -5212,6 +5256,53 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   content: "※";
   position: absolute;
   left: 0;
+}
+
+.contentStyle1::after,
+.contentStyle2::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.contentStyle3 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30px;
+}
+@media screen and (min-width: 1000px) {
+  .contentStyle3 {
+    flex-direction: row;
+  }
+  .contentStyle3 .pic {
+    width: 40%;
+  }
+  .contentStyle3 .content {
+    width: 60%;
+  }
+}
+
+.contentStyle4 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30px;
+}
+@media screen and (min-width: 1000px) {
+  .contentStyle4 {
+    flex-direction: row;
+  }
+  .contentStyle4 .pic {
+    width: 40%;
+  }
+  .contentStyle4 .content {
+    width: 60%;
+  }
+}
+
+.contentStyle5 .pic img {
+  width: auto !important;
 }
 
 body {
