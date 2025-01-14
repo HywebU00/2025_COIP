@@ -1304,14 +1304,18 @@ footer {
     }
 
     .footerTextBlock {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 10px;
       margin-top: 10px;
 
-      &.noBreak {
+      &.break {
+        flex-wrap: wrap;
 
         p,
         a {
-          white-space: nowrap;
-          flex-wrap: nowrap;
+          white-space: wrap;
         }
       }
 

@@ -1802,12 +1802,18 @@ footer .container .footer_info {
   max-width: 500px;
 }
 footer .container .footerTextBlock {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
   margin-top: 10px;
 }
-footer .container .footerTextBlock.noBreak p,
-footer .container .footerTextBlock.noBreak a {
-  white-space: nowrap;
-  flex-wrap: nowrap;
+footer .container .footerTextBlock.break {
+  flex-wrap: wrap;
+}
+footer .container .footerTextBlock.break p,
+footer .container .footerTextBlock.break a {
+  white-space: wrap;
 }
 footer .container .footerTextBlock a {
   text-decoration: underline;
