@@ -1802,18 +1802,10 @@ footer .container .footer_info {
   max-width: 500px;
 }
 footer .container .footerTextBlock {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 10px;
   margin-top: 10px;
 }
-footer .container .footerTextBlock.break {
-  flex-wrap: wrap;
-}
-footer .container .footerTextBlock.break p,
-footer .container .footerTextBlock.break a {
-  white-space: wrap;
+footer .container .footerTextBlock.noBreak {
+  white-space: nowrap;
 }
 footer .container .footerTextBlock a {
   text-decoration: underline;
@@ -1825,25 +1817,15 @@ footer .container .footerTextBlock p,
 footer .container .footerTextBlock a {
   margin: 0;
   word-break: break-all;
-  display: block;
+  display: inline-block;
   color: #fff;
-}
-footer .container .footerTextBlock p:has(img),
-footer .container .footerTextBlock a:has(img) {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-footer .container .footerTextBlock p img,
-footer .container .footerTextBlock a img {
-  width: auto !important;
-  height: auto !important;
-  float: left;
 }
 footer p {
   line-height: 1.45em;
   margin-bottom: 0.2em;
+}
+footer p.noBreak {
+  white-space: nowrap;
 }
 footer p span {
   display: inline-block;
@@ -1853,13 +1835,15 @@ footer p a {
   display: inline-block;
   color: #fff;
   text-decoration: none;
+  text-decoration: underline;
 }
 footer p a:hover, footer p a:focus {
   color: #e8e2f1;
   cursor: pointer;
 }
 footer p a img {
-  height: 2em;
+  width: auto;
+  height: 24px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 0.5em;

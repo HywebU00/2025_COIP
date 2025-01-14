@@ -1304,22 +1304,20 @@ footer {
     }
 
     .footerTextBlock {
-      display: flex;
-      align-items: center;
-      flex-wrap: nowrap;
-      gap: 10px;
       margin-top: 10px;
 
-      &.break {
-        flex-wrap: wrap;
+      &.noBreak {
+        // flex-wrap: nowrap;
+        white-space: nowrap;
 
-        p,
-        a {
-          white-space: wrap;
-        }
+        // p,
+        // a {
+        //   white-space: nowrap;
+        // }
       }
 
       a {
+        // flex-wrap: nowrap;
         text-decoration: underline;
 
         &:hover {
@@ -1331,21 +1329,21 @@ footer {
       a {
         margin: 0;
         word-break: break-all;
-        display: block;
+        display: inline-block;
         color: #fff;
 
-        &:has(img) {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-          flex-wrap: wrap;
-        }
+        // &:has(img) {
+        //   display: flex;
+        //   gap: 10px;
+        //   align-items: center;
+        //   flex-wrap: wrap;
+        // }
 
-        img {
-          width: auto !important;
-          height: auto !important;
-          float: left;
-        }
+        // img {
+        //   width: auto !important;
+        //   height: auto !important;
+        //   float: left;
+        // }
       }
     }
   }
@@ -1353,6 +1351,11 @@ footer {
   p {
     line-height: 1.45em;
     margin-bottom: 0.2em;
+
+    &.noBreak {
+      // flex-wrap: nowrap;
+      white-space: nowrap;
+    }
 
     span {
       display: inline-block;
@@ -1363,6 +1366,7 @@ footer {
       display: inline-block;
       color: #fff;
       text-decoration: none;
+      text-decoration: underline;
 
       &:hover,
       &:focus {
@@ -1371,7 +1375,8 @@ footer {
       }
 
       img {
-        height: 2em;
+        width: auto;
+        height: 24px;
         display: inline-block;
         vertical-align: middle;
         margin-right: 0.5em;
