@@ -77,86 +77,33 @@
   line-height: 0;
 }
 
-// body {
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     z-index: 90;
-//     inset: 0;
-//     background: #000;
-//     opacity: 0;
-//     pointer-events: none;
-//     @include transition(all, 0.3);
-//   }
-//   &.searchOpen,
-//   &.menuOpen {
-//     &::before {
-//       opacity: 0.5;
-//       pointer-events: unset;
-//     }
-//   }
-//   &.menuOpen {
-//     .mainMenu ul {
-//       width: 100%;
-//       margin: 0;
-//       text-align: left;
+body {
 
-//       li {
-//         margin: 0;
-//         a {
-//           color: #fff !important;
-//           padding: 15px 10px;
-//           border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-//         }
-//         ul {
-//           border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-//           li {
-//             a {
-//               border: none;
-//               padding: 5px 5px 5px 30px;
-//             }
-//             ul {
-//               padding: 0;
-//               border: none;
-//               li a {
-//                 background: lighten($mainColor, 5%);
-//                 padding: 5px 5px 5px 50px;
-//               }
-//             }
-//           }
-//         }
-//         &.nextLv {
-//           & > a::before {
-//             width: 10px;
-//             height: 10px;
-//             border-color: #fff;
-//             border-width: 0 3px 3px 0;
-//             right: 15px;
-//             transform: translateY(-50%) rotate(45deg);
-//           }
-//           &.active {
-//             & > a::before {
-//               border-color: #fff;
-//               transform: translateY(-50%) rotate(225deg);
-//             }
-//           }
-//         }
-//       }
-//     }
-//     .officeLink {
-//       margin: 0;
-//       a {
-//         text-align: left;
-//         &::after {
-//           background: darken($mainColor, 20%);
-//         }
-//       }
-//     }
-//   }
-//   a {
-//     color: $mainColor;
-//   }
-// }
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   z-index: 90;
+  //   inset: 0;
+  //   background: #000;
+  //   opacity: 0;
+  //   pointer-events: none;
+  //   @include transition(all, 0.3);
+  // }
+  // &.searchOpen,
+  &.menuOpen {
+    &::before {
+      opacity: 0.5;
+      pointer-events: unset;
+    }
+  }
+
+  &.menuOpen {}
+
+  a {
+    color: $mainColor;
+  }
+}
+
 .wrapper {
   @include screen('tablet') {
     padding-top: 60px;
@@ -310,10 +257,11 @@ header {
     width: 50%;
     height: calc(100% - 60px);
     position: fixed;
+    padding: 0;
     left: 0;
     transform: translateX(-100%);
     top: 60px;
-    background: $mainColor;
+    background: #30253f;
 
     * {
       flex-direction: column;
@@ -328,16 +276,18 @@ header {
       display: block;
       z-index: 9;
       cursor: pointer;
+      pointer-events: none;
     }
   }
 
   nav:not(.navigation) {
+    width: 100%;
     display: flex;
     align-items: center;
 
-    @include screen('tablet') {
-      background: #fff;
-    }
+    // @include screen('tablet') {
+    //   background: #fff;
+    // }
 
     & > ul {
       display: flex;
@@ -371,21 +321,36 @@ header {
           }
 
           @include screen('tablet') {
-            border-bottom: 1px solid #ccc;
+            padding: 15px 30px 15px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
           }
 
           &:hover {
             color: #f39800;
+
+            &::before {
+              border-color: #f39800;
+            }
+
+            @include screen('tablet') {
+              color: #fff;
+              background: #c57f0a;
+
+              &::before {
+                border-color: #fff;
+              }
+            }
           }
         }
 
         &.nextLv {
           & > a {
+
             &::before {
               content: '';
               width: 6px;
               height: 6px;
-              border-color: $textDarken;
+              border-color: #fff;
               border-style: solid;
               border-width: 0 2px 2px 0;
               position: absolute;
@@ -401,8 +366,21 @@ header {
           }
 
           &.active {
-            & > a::before {
-              border-color: $mainColor;
+            & > a {
+              color: #f39800;
+
+              &::before {
+                border-color: #f39800;
+              }
+
+              @include screen('tablet') {
+                color: #fff;
+                background: #c57f0a;
+
+                &::before {
+                  border-color: #fff;
+                }
+              }
             }
           }
         }
@@ -433,10 +411,12 @@ header {
             color: $textDarken;
 
             @include screen('tablet') {
-              padding: 5px 30px;
+              padding: 10px 30px 10px 30px;
+              color: #fff;
               text-align: left;
-              border-bottom: 1px solid #ccc;
-              background: #ededed;
+              border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+              background: #3e3150 !important;
+              // background: #ededed;
 
               .toggleBtn {
                 height: 40px;
@@ -446,6 +426,22 @@ header {
             &:hover {
               color: #fff;
               background: $mainColor;
+
+              @include screen('tablet') {
+                color: #f39800;
+                background: none;
+
+                &::before {
+                  border-color: #f39800 !important;
+                }
+              }
+            }
+          }
+
+          ul a {
+            @include screen('tablet') {
+              padding: 10px 30px 10px 40px;
+              background: #53406b !important;
             }
           }
 
@@ -460,8 +456,12 @@ header {
               position: absolute;
               right: 15px;
               top: 50%;
-              transform: translateY(-50%) rotate(-45deg);
+              transform: translateY(-50%) rotate(45deg);
               opacity: 0.8;
+
+              @include screen('tablet') {
+                border-color: #fff;
+              }
             }
 
             &.active {
@@ -471,6 +471,14 @@ header {
 
                 &::before {
                   border-color: #fff;
+                }
+
+                @include screen('tablet') {
+                  color: #f39800;
+
+                  &::before {
+                    border-color: #f39800;
+                  }
                 }
               }
             }
@@ -723,8 +731,15 @@ header {
 }
 
 .sticky {
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(6px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    display: block;
+    background: rgba(255, 255, 255, 0.5);
+  }
 
   @include screen('tabletMin') {
     position: fixed;

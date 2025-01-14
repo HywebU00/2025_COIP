@@ -594,7 +594,7 @@ a {
   transition: all 0.3s ease;
 }
 a:hover {
-  color: #411886;
+  color: #61478d;
 }
 
 img {
@@ -737,7 +737,7 @@ button:focus {
   padding: 3px 5px;
   color: #e7e7e7;
   display: block;
-  background: #411886;
+  background: #61478d;
   font-weight: 500;
   cursor: pointer;
   margin: 10px auto 0 auto;
@@ -795,7 +795,7 @@ button:focus {
 .goTop {
   width: 50px;
   height: 50px;
-  background: #411886;
+  background: #61478d;
   border-radius: 100%;
   position: fixed;
   bottom: 30%;
@@ -822,6 +822,14 @@ button:focus {
   line-height: 0;
 }
 
+body.menuOpen::before {
+  opacity: 0.5;
+  pointer-events: unset;
+}
+body a {
+  color: #61478d;
+}
+
 @media screen and (max-width: 1000px) {
   .wrapper {
     padding-top: 60px;
@@ -839,7 +847,7 @@ button:focus {
   text-align: center;
   padding: 0;
   margin: 0 0 40px;
-  color: #411886;
+  color: #61478d;
   font-size: 2.625rem;
 }
 @media screen and (max-width: 1000px) {
@@ -941,10 +949,11 @@ header .logo a.logo_S {
     width: 50%;
     height: calc(100% - 60px);
     position: fixed;
+    padding: 0;
     left: 0;
     transform: translateX(-100%);
     top: 60px;
-    background: #411886;
+    background: #30253f;
   }
   .mainMenu * {
     flex-direction: column;
@@ -958,16 +967,13 @@ header .logo a.logo_S {
     display: block;
     z-index: 9;
     cursor: pointer;
+    pointer-events: none;
   }
 }
 .mainMenu nav:not(.navigation) {
+  width: 100%;
   display: flex;
   align-items: center;
-}
-@media screen and (max-width: 1000px) {
-  .mainMenu nav:not(.navigation) {
-    background: #fff;
-  }
 }
 .mainMenu nav:not(.navigation) > ul {
   display: flex;
@@ -1006,17 +1012,30 @@ header .logo a.logo_S {
 }
 @media screen and (max-width: 1000px) {
   .mainMenu nav:not(.navigation) > ul > li > a {
-    border-bottom: 1px solid #ccc;
+    padding: 15px 30px 15px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
 .mainMenu nav:not(.navigation) > ul > li > a:hover {
   color: #f39800;
 }
+.mainMenu nav:not(.navigation) > ul > li > a:hover::before {
+  border-color: #f39800;
+}
+@media screen and (max-width: 1000px) {
+  .mainMenu nav:not(.navigation) > ul > li > a:hover {
+    color: #fff;
+    background: #c57f0a;
+  }
+  .mainMenu nav:not(.navigation) > ul > li > a:hover::before {
+    border-color: #fff;
+  }
+}
 .mainMenu nav:not(.navigation) > ul > li.nextLv > a::before {
   content: "";
   width: 6px;
   height: 6px;
-  border-color: #222;
+  border-color: #fff;
   border-style: solid;
   border-width: 0 2px 2px 0;
   position: absolute;
@@ -1030,8 +1049,20 @@ header .logo a.logo_S {
     right: 20px;
   }
 }
+.mainMenu nav:not(.navigation) > ul > li.nextLv.active > a {
+  color: #f39800;
+}
 .mainMenu nav:not(.navigation) > ul > li.nextLv.active > a::before {
-  border-color: #411886;
+  border-color: #f39800;
+}
+@media screen and (max-width: 1000px) {
+  .mainMenu nav:not(.navigation) > ul > li.nextLv.active > a {
+    color: #fff;
+    background: #c57f0a;
+  }
+  .mainMenu nav:not(.navigation) > ul > li.nextLv.active > a::before {
+    border-color: #fff;
+  }
 }
 .mainMenu nav:not(.navigation) > ul ul {
   width: 100%;
@@ -1060,10 +1091,11 @@ header .logo a.logo_S {
 }
 @media screen and (max-width: 1000px) {
   .mainMenu nav:not(.navigation) > ul ul li a {
-    padding: 5px 30px;
+    padding: 10px 30px 10px 30px;
+    color: #fff;
     text-align: left;
-    border-bottom: 1px solid #ccc;
-    background: #ededed;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: #3e3150 !important;
   }
   .mainMenu nav:not(.navigation) > ul ul li a .toggleBtn {
     height: 40px;
@@ -1071,7 +1103,22 @@ header .logo a.logo_S {
 }
 .mainMenu nav:not(.navigation) > ul ul li a:hover {
   color: #fff;
-  background: #411886;
+  background: #61478d;
+}
+@media screen and (max-width: 1000px) {
+  .mainMenu nav:not(.navigation) > ul ul li a:hover {
+    color: #f39800;
+    background: none;
+  }
+  .mainMenu nav:not(.navigation) > ul ul li a:hover::before {
+    border-color: #f39800 !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .mainMenu nav:not(.navigation) > ul ul li ul a {
+    padding: 10px 30px 10px 40px;
+    background: #53406b !important;
+  }
 }
 .mainMenu nav:not(.navigation) > ul ul li.nextLv > a::before {
   content: "";
@@ -1083,15 +1130,28 @@ header .logo a.logo_S {
   position: absolute;
   right: 15px;
   top: 50%;
-  transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(45deg);
   opacity: 0.8;
+}
+@media screen and (max-width: 1000px) {
+  .mainMenu nav:not(.navigation) > ul ul li.nextLv > a::before {
+    border-color: #fff;
+  }
 }
 .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a {
   color: #fff;
-  background: #411886;
+  background: #61478d;
 }
 .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a::before {
   border-color: #fff;
+}
+@media screen and (max-width: 1000px) {
+  .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a {
+    color: #f39800;
+  }
+  .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a::before {
+    border-color: #f39800;
+  }
 }
 .mainMenu nav:not(.navigation) > ul ul li.left ul {
   left: auto;
@@ -1137,8 +1197,8 @@ header .logo a.logo_S {
   transform: translate(-50%, -50%);
   width: 20px;
   height: 2px;
-  background: #411886;
-  box-shadow: #411886 0 6px 0 0, #411886 0 -6px 0 0;
+  background: #61478d;
+  box-shadow: #61478d 0 6px 0 0, #61478d 0 -6px 0 0;
   transition: 0.2s linear;
 }
 .mobileBtn::after {
@@ -1146,7 +1206,7 @@ header .logo a.logo_S {
   content: "";
   width: 20px;
   height: 2px;
-  background: #411886;
+  background: #61478d;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -1177,7 +1237,7 @@ header .logo a.logo_S {
   padding: 10px;
   line-height: 1.8;
   color: #fff;
-  background: #411886;
+  background: #61478d;
   position: relative;
   isolation: isolate;
 }
@@ -1299,10 +1359,14 @@ header .logo a.logo_S {
   height: 60px;
 }
 
-.sticky {
-  background: rgba(255, 255, 255, 0.5);
+.sticky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
 }
 @media screen and (min-width: 1000px) {
   .sticky {
@@ -1785,7 +1849,7 @@ footer p a {
   text-decoration: none;
 }
 footer p a:hover, footer p a:focus {
-  color: #c6adf0;
+  color: #e8e2f1;
   cursor: pointer;
 }
 footer p a img {
@@ -1852,7 +1916,7 @@ footer .footer_share li a {
 footer .footer_link li a:hover, footer .footer_link li a:focus,
 footer .footer_share li a:hover,
 footer .footer_share li a:focus {
-  color: #411886;
+  color: #61478d;
   cursor: pointer;
 }
 footer .footer_link li img,
@@ -1926,7 +1990,7 @@ footer .footerLogo {
   height: 30px;
   color: #fff;
   border: none;
-  background: #411886;
+  background: #61478d;
   position: absolute;
   right: 1%;
   z-index: 9;
@@ -1952,7 +2016,7 @@ footer .footerLogo {
 
 .fatfooter .btn-fatfooter:hover,
 .fatfooter .btn-fatfooter:focus {
-  background: #411886;
+  background: #61478d;
   color: #fff;
   text-decoration: none;
   cursor: pointer;
@@ -2033,7 +2097,7 @@ footer .footerLogo {
 
 .fatfooter nav ul li a:hover,
 .fatfooter nav ul li a:focus {
-  color: #411886;
+  color: #61478d;
   cursor: pointer;
 }
 
@@ -2153,13 +2217,13 @@ header .navigation li a {
   }
 }
 header .navigation li a:hover, header .navigation li a:focus {
-  color: #411886;
+  color: #61478d;
   cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
   header .navigation li a:hover, header .navigation li a:focus {
     color: #fff;
-    background: #411886;
+    background: #61478d;
   }
 }
 header .navigation li a img {
@@ -2176,7 +2240,7 @@ header .navigation li a img {
 }
 header .navigation .btn_login {
   position: relative;
-  background: #411886;
+  background: #61478d;
   color: #fff;
   height: 38px;
   border: none;
@@ -2984,6 +3048,8 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 }
 .indexMain .faqBox .content .moreItem .pic {
   opacity: 0.5;
+  aspect-ratio: 170/123;
+  overflow: hidden;
 }
 .indexMain .faqBox .content .moreItem .pic img {
   transition: all 20s linear;
@@ -3045,53 +3111,53 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   transform: scaleX(1);
 }
 
-.lp ul {
+.lp:not(:has(.lp2)) ul {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.lp ul li:hover a {
-  border-bottom: 1px solid #411886;
+.lp:not(:has(.lp2)) ul li:hover a {
+  border-bottom: 1px solid #61478d;
   transform: translate(-5px, -5px);
 }
-.lp a {
+.lp:not(:has(.lp2)) a {
   padding-bottom: 30px;
   border-bottom: 1px solid #ccc;
   display: block;
   position: relative;
   transition: all 0.3ss ease;
 }
-.lp a:hover .title {
-  color: #411886;
+.lp:not(:has(.lp2)) a:hover .title {
+  color: #61478d;
 }
-.lp a:hover .more {
-  background: #411886;
+.lp:not(:has(.lp2)) a:hover .more {
+  background: #61478d;
 }
-.lp .top {
+.lp:not(:has(.lp2)) .top {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 10px;
 }
 @media screen and (max-width: 767px) {
-  .lp .top {
+  .lp:not(:has(.lp2)) .top {
     flex-wrap: wrap;
   }
 }
-.lp .top time {
+.lp:not(:has(.lp2)) .top time {
   display: block;
-  color: #411886;
+  color: #61478d;
   font-size: 1.125rem;
   font-weight: 600;
 }
-.lp .top .tag {
+.lp:not(:has(.lp2)) .top .tag {
   border-radius: 50px;
   color: #fff;
   font-size: 13px;
   padding: 5px 10px;
   background: #d30077;
 }
-.lp .top .title {
+.lp:not(:has(.lp2)) .top .title {
   font-size: 1.625rem;
   line-height: 1;
   overflow: hidden;
@@ -3105,16 +3171,16 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 767px) {
-  .lp .top .title {
+  .lp:not(:has(.lp2)) .top .title {
     width: 100%;
   }
 }
-.lp .description {
+.lp:not(:has(.lp2)) .description {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.lp .description p {
+.lp:not(:has(.lp2)) .description p {
   margin: 0;
   color: #313131;
   font-size: 1.125rem;
@@ -3123,7 +3189,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.lp .description .more {
+.lp:not(:has(.lp2)) .description .more {
   background: #000;
   color: #fff;
   display: flex;
@@ -3134,7 +3200,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 767px) {
-  .lp .description .more {
+  .lp:not(:has(.lp2)) .description .more {
     font-size: 14px;
     position: absolute;
     top: 0;
@@ -3204,6 +3270,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 .lp2 ul {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   gap: 40px 20px;
 }
 .lp2 ul li {
@@ -3232,7 +3299,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 }
 .lp2 time {
   display: block;
-  color: #411886;
+  color: #61478d;
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -3285,7 +3352,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   position: absolute;
   width: 20px;
   height: 20px;
-  border: 1px solid #411886;
+  border: 1px solid #61478d;
   border-width: 0 1px 1px 0;
   right: 20px;
   line-height: 1;
@@ -3330,7 +3397,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   line-height: 1;
   padding: 5px 8px 6px;
   color: #fff;
-  background: rgba(65, 24, 134, 0.6);
+  background: rgba(97, 71, 141, 0.6);
   border-radius: 0 0 8px 8px;
 }
 .accordionBox .content p {
@@ -3398,7 +3465,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 
 .cpTime {
   display: block;
-  color: #411886;
+  color: #61478d;
   font-size: 1.125rem;
   font-weight: 600;
   text-align: right;
@@ -3410,7 +3477,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   margin: 0;
 }
 .cp a {
-  color: #411886;
+  color: #61478d;
 }
 .cp a:hover {
   color: #9a3212;
@@ -3468,7 +3535,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   font-style: normal;
   display: block;
   font-size: 1em;
-  border-left: 5px solid #411886;
+  border-left: 5px solid #61478d;
   padding: 2em;
   box-sizing: border-box;
   margin: 0 0em 2em;
@@ -3626,6 +3693,15 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 .fileDownload li span.file_odt a:hover, .fileDownload li span.file_odt a:focus-visible {
   color: #fff;
 }
+.fileDownload li span.file_odf a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.2em 0.8em;
+  border-radius: 3px;
+}
+.fileDownload li span.file_odf a:hover, .fileDownload li span.file_odf a:focus-visible {
+  color: #fff;
+}
 .fileDownload li span.file_xls a {
   color: #fff;
   font-weight: bold;
@@ -3734,6 +3810,60 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 .fileDownload li span.file_jpg a:hover, .fileDownload li span.file_jpg a:focus-visible {
   color: #fff;
 }
+.fileDownload li span.file_jpeg a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.2em 0.8em;
+  border-radius: 3px;
+}
+.fileDownload li span.file_jpeg a:hover, .fileDownload li span.file_jpeg a:focus-visible {
+  color: #fff;
+}
+.fileDownload li span.file_gif a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.2em 0.8em;
+  border-radius: 3px;
+}
+.fileDownload li span.file_gif a:hover, .fileDownload li span.file_gif a:focus-visible {
+  color: #fff;
+}
+.fileDownload li span.file_png a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.2em 0.8em;
+  border-radius: 3px;
+}
+.fileDownload li span.file_png a:hover, .fileDownload li span.file_png a:focus-visible {
+  color: #fff;
+}
+.fileDownload li span.file_bmp a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.2em 0.8em;
+  border-radius: 3px;
+}
+.fileDownload li span.file_bmp a:hover, .fileDownload li span.file_bmp a:focus-visible {
+  color: #fff;
+}
+.fileDownload li span.file_svg a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.2em 0.8em;
+  border-radius: 3px;
+}
+.fileDownload li span.file_svg a:hover, .fileDownload li span.file_svg a:focus-visible {
+  color: #fff;
+}
+.fileDownload li span.file_ico a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.2em 0.8em;
+  border-radius: 3px;
+}
+.fileDownload li span.file_ico a:hover, .fileDownload li span.file_ico a:focus-visible {
+  color: #fff;
+}
 .fileDownload li span.file_wmv a {
   color: #fff;
   font-weight: bold;
@@ -3774,10 +3904,10 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   display: flex;
   align-items: center;
 }
-.fileDownload li span.file_doc a, .fileDownload li span.file_docx a, .fileDownload li span.file_odt a {
+.fileDownload li span.file_doc a, .fileDownload li span.file_docx a, .fileDownload li span.file_odt a, .fileDownload li span.file_odf a {
   background: #275cb7;
 }
-.fileDownload li span.file_doc a:hover, .fileDownload li span.file_doc a:focus-visible, .fileDownload li span.file_docx a:hover, .fileDownload li span.file_docx a:focus-visible, .fileDownload li span.file_odt a:hover, .fileDownload li span.file_odt a:focus-visible {
+.fileDownload li span.file_doc a:hover, .fileDownload li span.file_doc a:focus-visible, .fileDownload li span.file_docx a:hover, .fileDownload li span.file_docx a:focus-visible, .fileDownload li span.file_odt a:hover, .fileDownload li span.file_odt a:focus-visible, .fileDownload li span.file_odf a:hover, .fileDownload li span.file_odf a:focus-visible {
   background: #2351a2;
 }
 .fileDownload li span.file_xls a, .fileDownload li span.file_xlsx a, .fileDownload li span.file_csv a, .fileDownload li span.file_ods a {
@@ -3822,10 +3952,10 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 .fileDownload li span.file_mp3 a:hover, .fileDownload li span.file_mp3 a:focus-visible, .fileDownload li span.file_mp4 a:hover, .fileDownload li span.file_mp4 a:focus-visible {
   background: #077db3;
 }
-.fileDownload li span.file_jpg a {
+.fileDownload li span.file_jpg a, .fileDownload li span.file_jpeg a, .fileDownload li span.file_gif a, .fileDownload li span.file_png a, .fileDownload li span.file_bmp a, .fileDownload li span.file_svg a, .fileDownload li span.file_ico a {
   background: #6c29a4;
 }
-.fileDownload li span.file_jpg a:hover, .fileDownload li span.file_jpg a:focus-visible {
+.fileDownload li span.file_jpg a:hover, .fileDownload li span.file_jpg a:focus-visible, .fileDownload li span.file_jpeg a:hover, .fileDownload li span.file_jpeg a:focus-visible, .fileDownload li span.file_gif a:hover, .fileDownload li span.file_gif a:focus-visible, .fileDownload li span.file_png a:hover, .fileDownload li span.file_png a:focus-visible, .fileDownload li span.file_bmp a:hover, .fileDownload li span.file_bmp a:focus-visible, .fileDownload li span.file_svg a:hover, .fileDownload li span.file_svg a:focus-visible, .fileDownload li span.file_ico a:hover, .fileDownload li span.file_ico a:focus-visible {
   background: #5f2490;
 }
 .fileDownload li span.file_wmv a {
@@ -3851,14 +3981,14 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 }
 .webLink li a {
   display: block;
-  color: #411886;
+  color: #61478d;
 }
 
 .cp2 p {
   margin: 0;
 }
 .cp2 a {
-  color: #411886;
+  color: #61478d;
 }
 .cp2 a:hover {
   color: #9a3212;
@@ -4569,7 +4699,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
           clip-path: polygon(0 0, 100% 0, 0 100%);
   width: 8%;
   height: 30%;
-  background: linear-gradient(to right, #411886 0%, #209eed 100%);
+  background: linear-gradient(to right, #61478d 0%, #209eed 100%);
   display: block;
   position: absolute;
   left: 0;

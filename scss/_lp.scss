@@ -1,4 +1,4 @@
-.lp {
+.lp:not(:has(.lp2)) {
   ul {
     display: flex;
     flex-direction: column;
@@ -175,6 +175,7 @@
   ul {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     gap: 40px 20px;
 
     li {

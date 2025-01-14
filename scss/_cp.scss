@@ -229,7 +229,7 @@
       }
     }
 
-    $fileType: doc, docx, odt, xls, xlsx, csv, ods, ppt, pptx, odp, zip, txt, mov, mp3, jpg, wmv, mp4, pdf, other;
+    $fileType: doc, docx, odt, odf, xls, xlsx, csv, ods, ppt, pptx, odp, zip, txt, mov, mp3, jpg, jpeg, gif, png, bmp, svg, ico, wmv, mp4, pdf, other;
 
     //notice 保留file_比較清楚知道是對應什麼
     @each $fileType in $fileType {
@@ -254,7 +254,8 @@
 
       &.file_doc,
       &.file_docx,
-      &.file_odt {
+      &.file_odt,
+      &.file_odf {
         a {
           background: #275cb7;
 
@@ -350,7 +351,13 @@
         }
       }
 
-      &.file_jpg {
+      &.file_jpg,
+      &.file_jpeg,
+      &.file_gif,
+      &.file_png,
+      &.file_bmp,
+      &.file_svg,
+      &.file_ico {
         a {
           background: #6c29a4;
 

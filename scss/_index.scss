@@ -662,6 +662,8 @@
 
           .pic {
             opacity: 0.5;
+            aspect-ratio: 170/123;
+            overflow: hidden;
 
             img {
               transition: all 20s linear;
