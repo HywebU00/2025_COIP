@@ -72,8 +72,10 @@
     }
   }
 
-  ul {
-    list-style-type: disc;
+  &:not(:has(.np)) {
+    ul {
+      list-style-type: disc;
+    }
   }
 
   dd,

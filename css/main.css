@@ -3422,7 +3422,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   opacity: 0.2;
 }
 .submenu li a {
-  color: #fff;
+  color: #fff !important;
   display: block;
   position: relative;
   padding: 20px 100px 20px 30px;
@@ -3448,6 +3448,9 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   position: absolute;
   right: 39px;
   top: 30px;
+}
+.submenu li a:hover {
+  padding-left: 40px;
 }
 .submenu li a:hover::before {
   width: 50px;
@@ -3512,7 +3515,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 .cp ol li {
   margin-bottom: 0.5em;
 }
-.cp ul {
+.cp:not(:has(.np)) ul {
   list-style-type: disc;
 }
 .cp dd,

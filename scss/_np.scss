@@ -30,7 +30,7 @@
     }
 
     a {
-      color: #fff;
+      color: #fff !important;
       display: block;
       position: relative;
       padding: 20px 100px 20px 30px;
@@ -60,6 +60,8 @@
       }
 
       &:hover {
+        padding-left: 40px;
+
         &::before {
           width: 50px;
         }
