@@ -2727,14 +2727,17 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 .indexMain .typeBox .listBox .item .top {
   text-align: center;
 }
-.indexMain .typeBox .listBox .item .top div {
+.indexMain .typeBox .listBox .item .top div,
+.indexMain .typeBox .listBox .item .top a {
+  display: block;
   color: #fff;
   padding: 4px 5px 6px;
   letter-spacing: 1px;
   position: relative;
   margin-bottom: 35px;
 }
-.indexMain .typeBox .listBox .item .top div::before {
+.indexMain .typeBox .listBox .item .top div::before,
+.indexMain .typeBox .listBox .item .top a::before {
   content: "";
   width: 14px;
   height: 14px;
@@ -2745,32 +2748,43 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   left: 50%;
   transform: translateX(-50%);
 }
-.indexMain .typeBox .listBox .item .top div:last-child {
+.indexMain .typeBox .listBox .item .top div:last-child,
+.indexMain .typeBox .listBox .item .top a:last-child {
   margin-bottom: 0;
 }
-.indexMain .typeBox .listBox .item .top div:last-child::before {
+.indexMain .typeBox .listBox .item .top div:last-child::before,
+.indexMain .typeBox .listBox .item .top a:last-child::before {
   display: none;
 }
-.indexMain .typeBox .listBox .item .top div.name {
+.indexMain .typeBox .listBox .item .top div.name,
+.indexMain .typeBox .listBox .item .top a.name {
   background: #363636;
 }
-.indexMain .typeBox .listBox .item .top div.parentsName {
+.indexMain .typeBox .listBox .item .top div.parentsName,
+.indexMain .typeBox .listBox .item .top a.parentsName {
   background: #1866a4;
   border-radius: 50px;
 }
-.indexMain .typeBox .listBox .item .top div.clanName {
+.indexMain .typeBox .listBox .item .top div.clanName,
+.indexMain .typeBox .listBox .item .top a.clanName {
   background: #9a3212;
   -webkit-clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
           clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
 }
-.indexMain .typeBox .listBox .item .top div.familyName {
+.indexMain .typeBox .listBox .item .top div.familyName,
+.indexMain .typeBox .listBox .item .top a.familyName {
   padding: 5px;
   background: #346a23;
   -webkit-clip-path: polygon(50% 0%, 100% 8px, 100% 100%, 0 100%, 0% 8px);
           clip-path: polygon(50% 0%, 100% 8px, 100% 100%, 0 100%, 0% 8px);
 }
-.indexMain .typeBox .listBox .item .top div.longName {
+.indexMain .typeBox .listBox .item .top div.longName,
+.indexMain .typeBox .listBox .item .top a.longName {
   background: #533629;
+}
+.indexMain .typeBox .listBox .item .top div a,
+.indexMain .typeBox .listBox .item .top a a {
+  color: #fff;
 }
 .indexMain .typeBox .listBox .item p {
   color: #000;
@@ -4369,6 +4383,9 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 .cp4 .content .nameBox .longName {
   background: #533629;
 }
+.cp4 .content .nameBox a {
+  color: #fff;
+}
 .cp4 .content .nameBox table {
   width: 100%;
   color: #000;
@@ -4930,6 +4947,9 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 .cp6 .list .content1 .typeBox .box .longName {
   background: #533629;
 }
+.cp6 .list .content1 .typeBox .box a {
+  color: #fff;
+}
 .cp6 .list .content2 {
   width: 50%;
   display: flex;
@@ -5126,6 +5146,9 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 }
 .cp7 .listBox .content1 .typeBox .box .longName {
   background: #533629;
+}
+.cp7 .listBox .content1 .typeBox .box a {
+  color: #fff;
 }
 .cp7 .content2 p {
   color: #616061;
@@ -5358,6 +5381,9 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 }
 .cp7 .UListBox .content .nameBox .longName {
   background: #533629;
+}
+.cp7 .UListBox .content .nameBox a {
+  color: #fff;
 }
 .cp7 .UListBox .content .nameBox table {
   width: 100%;

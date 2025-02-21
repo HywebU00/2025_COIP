@@ -305,7 +305,9 @@
           .top {
             text-align: center;
 
-            div {
+            div,
+            a {
+              display: block;
               color: #fff;
               padding: 4px 5px 6px;
               letter-spacing: 1px;
@@ -354,6 +356,10 @@
 
               &.longName {
                 background: #533629;
+              }
+
+              a {
+                color: #fff;
               }
             }
           }
