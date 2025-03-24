@@ -4397,7 +4397,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
 }
 .cp4 .more {
   color: #000;
-  font-weight: 600;
+  font-weight: 400;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -4410,6 +4410,8 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   bottom: 0;
   top: 0;
   right: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
   writing-mode: vertical-lr;
   transition: all 0.1s linear;
 }
@@ -5168,26 +5170,36 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   flex-direction: column;
   gap: 50px;
 }
+.cp7 .UListBox .item.c1 .more,
+.cp7 .UListBox .item.c1 .more::after,
 .cp7 .UListBox .item.c1 .content::before,
 .cp7 .UListBox .item.c1 .content::after,
 .cp7 .UListBox .item.c1 .subTitle {
   background-color: #c98d37;
 }
+.cp7 .UListBox .item.c2 .more,
+.cp7 .UListBox .item.c2 .more::after,
 .cp7 .UListBox .item.c2 .content::before,
 .cp7 .UListBox .item.c2 .content::after,
 .cp7 .UListBox .item.c2 .subTitle {
   background-color: #c9c700;
 }
+.cp7 .UListBox .item.c3 .more,
+.cp7 .UListBox .item.c3 .more::after,
 .cp7 .UListBox .item.c3 .content::before,
 .cp7 .UListBox .item.c3 .content::after,
 .cp7 .UListBox .item.c3 .subTitle {
   background-color: #62448c;
 }
+.cp7 .UListBox .item.c4 .more,
+.cp7 .UListBox .item.c4 .more::after,
 .cp7 .UListBox .item.c4 .content::before,
 .cp7 .UListBox .item.c4 .content::after,
 .cp7 .UListBox .item.c4 .subTitle {
   background-color: #5c9610;
 }
+.cp7 .UListBox .item.c5 .more,
+.cp7 .UListBox .item.c5 .more::after,
 .cp7 .UListBox .item.c5 .content::before,
 .cp7 .UListBox .item.c5 .content::after,
 .cp7 .UListBox .item.c5 .subTitle {
@@ -5199,7 +5211,7 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   flex-direction: column;
   gap: 30px;
   position: relative;
-  padding: 0px 20px 30px;
+  padding: 0px 20px 50px;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px 0px;
 }
@@ -5254,6 +5266,36 @@ header .navigation .btn_login:hover, header .navigation .btn_login:focus {
   background-blend-mode: normal, difference;
   mix-blend-mode: overlay;
   opacity: 0.2;
+}
+.cp7 .UListBox .content .more {
+  margin: auto 0 0;
+  text-align: center;
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+  line-height: 1;
+  justify-content: center;
+  transition: all 0.3s linear;
+  position: absolute;
+  background: none !important;
+  right: 30px;
+  bottom: 30px;
+}
+.cp7 .UListBox .content .more::after {
+  content: "";
+  width: 36px;
+  height: 7px;
+  display: block;
+  background: url("../images/icon/icon_arrow.png") center center no-repeat !important;
+  transition: all 0.3s linear;
+}
+.cp7 .UListBox .content .more:hover {
+  opacity: 0.4;
+}
+.cp7 .UListBox .content .more:hover::after {
+  transform: translateX(5px);
 }
 .cp7 .UListBox .content .list {
   width: 100%;
